@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class LoginController {
 
     @GetMapping
-    public String view() {
+    public String view(Modele model, LoginForm form) {
         return "login";
     }
 
