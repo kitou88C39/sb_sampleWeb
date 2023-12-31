@@ -10,6 +10,8 @@ import com.example.demo.form.LoginForm;
 @Controller
 public class LoginController {
 
+    private static final String LOGIN_ID = "user";
+
     @GetMapping("/login")
     public String view(Model model, LoginForm form) {
         return "login";
