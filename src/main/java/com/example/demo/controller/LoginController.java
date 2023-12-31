@@ -10,13 +10,12 @@ import com.example.demo.form.LoginForm;
 @Controller
 public class LoginController {
 
-    @GetMapping
+    @GetMapping（"/login"）
     public String view(Modele model, LoginForm form) {
         return "login";
     }
 
-    @PostMapping
+    @PostMapping（"/login"）
     public void login(LoginForm form) {
         System.out.println(LoginForm form);
-}
-}
+}}
