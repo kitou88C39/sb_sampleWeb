@@ -26,6 +26,7 @@ public class LoginController {
             return "redirect:/menu";
         } else {
             model.addAttribute("errorMsq", "The combination of login ID and password is incorrect");
+            return "login";
         }
     }
 }
