@@ -11,6 +11,7 @@ import com.example.demo.form.LoginForm;
 public class LoginController {
 
     private static final String LOGIN_ID = "user";
+    private static final String PASSWORD = "pwd";
 
     @GetMapping("/login")
     public String view(Model model, LoginForm form) {
