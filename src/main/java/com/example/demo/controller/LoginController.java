@@ -23,9 +23,9 @@ public class LoginController {
         var isCorrectUserAuth = form.getLoginId().equals(LOGIN_ID)
                 && form.getPassword().equals(PASSWORD);
         if (isCorrectUserAuth) {
-            return "success";
+            return "redirect:/menu";
         } else {
-            return "failure";
+            model.addAttribute("errorMsq", "The combination of login ID and password is incorrect");
         }
     }
 }
