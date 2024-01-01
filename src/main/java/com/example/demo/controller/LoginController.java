@@ -19,7 +19,7 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public void login(LoginForm form) {
+    public String login(LoginForm form) {
         var isCorrectUserAuth = form.getLoginId().equals(LOGIN_ID)
                 && form.getPassword().equals(PASSWORD);
         if (isCorrectUserAuth) {
