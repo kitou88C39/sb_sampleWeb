@@ -7,7 +7,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.LoginForm;
 
+import lombok.RequiredArgsConstructor;
+
 @Controller
+@RequiredArgsConstructor
 public class LoginController {
 
     private static final String LOGIN_ID = "user";
