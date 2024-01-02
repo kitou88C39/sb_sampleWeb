@@ -10,8 +10,9 @@ import lombok.Data;
 @Table(name = "user_info")
 @Data
 public class UserInfo {
+
     @Id
-    @Column
+    @Column(name = "login_id")
     private String loginId;
     private String password;
 
