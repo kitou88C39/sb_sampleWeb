@@ -14,8 +14,6 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class LoginController {
 
-    private static final String LOGIN_ID = "user";
-    private static final String PASSWORD = "pwd";
     private final LoginService service;
 
     @GetMapping("/login")
