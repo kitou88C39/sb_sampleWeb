@@ -24,8 +24,10 @@ public class LoginController {
     }
 
     @PostMapping("/login")
-    public String login(LoginForm form) {
-        var UserInfo = service.searchUserById(form.getLoginId());
+    public String login(Model model, LoginForm form) {
+        var userInfo = service.searchUserById(form.getLoginId());
+        var isCorrectUserAuth = userInfo.isPresent()
+                && form.getPassword().equals(userInfo.get().getPassword());
         if (isCorrectUserAuth) {
             return "redirect:/menu";
         } else {
