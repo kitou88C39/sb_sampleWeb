@@ -5,6 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.entity.UserInfo;
 
+//User information table Dao
 @Repository
 public interface UserInfoRepository extends JpaRepository<UserInfo, String> {
 
