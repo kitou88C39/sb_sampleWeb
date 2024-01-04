@@ -8,6 +8,6 @@ public class BeanDefine {
 
     @Bean
     public PasswordEncoder passwordEncoder() {
-
+        return;
     }
 }
