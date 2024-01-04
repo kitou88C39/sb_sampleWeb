@@ -1,5 +1,6 @@
 package com.example.demo.controller;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,6 +18,8 @@ public class LoginController {
 
     // LoginService
     private final LoginService service;
+    // passwordEncoder
+    private final PasswordEncoder passwordEncoder;
 
     // Initial display
     // @Param modelモデル
