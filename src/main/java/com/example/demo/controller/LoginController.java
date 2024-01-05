@@ -49,7 +49,7 @@ public class LoginController {
             return "redirect:/menu";
         } else {
             var errorMsg = AppUtil.getMessage(messageSource, "login.wrongInput");
-            model.addAttribute("errorMsq", "The combination of login ID and password is incorrect");
+            model.addAttribute("errorMsq", errorMsg);
             return "login";
         }
     }
