@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.LoginForm;
 import com.example.demo.service.LoginService;
+import com.example.demo.util.AppUtil;
 
 import lombok.RequiredArgsConstructor;
 
@@ -47,6 +48,7 @@ public class LoginController {
         if (isCorrectUserAuth) {
             return "redirect:/menu";
         } else {
+            var errorMsg = AppUtil.getMessage(messageSource, "login.wrongInput");
             model.addAttribute("errorMsq", "The combination of login ID and password is incorrect");
             return "login";
         }
