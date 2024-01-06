@@ -1,9 +1,12 @@
-package com.example.demo.form;
+package com.example.demo.service;
 
-import java.util.Optional;
+import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.UserInfo;
+import com.example.demo.form.SignupForm;
 import com.example.demo.repository.UserInfoRepository;
+
+import lombok.RequiredArgsConstructor;
 
 //User registration screen
 
