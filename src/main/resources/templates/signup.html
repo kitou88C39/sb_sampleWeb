@@ -9,7 +9,7 @@
       <span th:text=${errorMsg}></span>
       <form th:action="@{/signup}" method="post" th:object="${signForm}">
         <div>
-        <label>Login ID</label>
+        <label>LoginID</label>
         <input type="text" th:field="*{signId}">
         </div>
         <div>
@@ -17,7 +17,7 @@
           <input type="password" th:field="*{password}">
         </div>
         <div>
-          <input type="submit" value="login">
+          <input type="submit" value="user registration">
         </div>
       </form>
   </body>
