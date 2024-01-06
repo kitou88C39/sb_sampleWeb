@@ -35,12 +35,12 @@ public class SignupController {
         return "login";
     }
 
-    // Login
+    // User registration screen
     // @Param modelモデル
     // @Param form入力情報
     // return 表示画面
 
-    @PostMapping("/login")
+    @PostMapping("/signup")
     public String login(Model model, LoginForm form) {
 
     }
