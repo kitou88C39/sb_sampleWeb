@@ -13,12 +13,12 @@ import com.example.demo.util.AppUtil;
 
 import lombok.RequiredArgsConstructor;
 
-//LoginScreenController
+//User registration screen Controller
 @Controller
 @RequiredArgsConstructor
 public class SignupController {
 
-    // LoginService
+    // User registration screen Service
     private final LoginService service;
     // passwordEncoder
     private final PasswordEncoder passwordEncoder;
@@ -42,15 +42,6 @@ public class SignupController {
 
     @PostMapping("/login")
     public String login(Model model, LoginForm form) {
-        var userInfo = service.searchUserById(form.getLoginId());
-        var isCorrectUserAuth = userInfo.isPresent()
-                && passwordEncoder.matches(form.getPassword(), userInfo.get().getPassword());
-        if (isCorrectUserAuth) {
-            return "redirect:/menu";
-        } else {
-            var errorMsg = AppUtil.getMessage(messageSource, ErrorMessageConst.LOGIN_WRONG_INPUT);
-            model.addAttribute("errorMsq", errorMsg);
-            return "login";
-        }
+
     }
 }
