@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.LoginForm;
 import com.example.demo.service.LoginService;
-import com.example.demo.util.AppUtil;
 
 import lombok.RequiredArgsConstructor;
 
@@ -30,9 +29,9 @@ public class SignupController {
     // @Param form入力情報
     // return 表示画面
 
-    @GetMapping("/login")
-    public String view(Model model, LoginForm form) {
-        return "login";
+    @GetMapping("/signup")
+    public String view(Model model, SignupForm form) {
+        return "signup";
     }
 
     // User registration screen
@@ -41,7 +40,7 @@ public class SignupController {
     // return 表示画面
 
     @PostMapping("/signup")
-    public String login(Model model, LoginForm form) {
+    public String signup(Model model, SignupForm form) {
 
     }
 }
