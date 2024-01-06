@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.themeleaf.org" lang="en" xml:lang="en">//Add thymeleaf
+  <head>
+    <meta charset="utf-8" />
+    <title>User registration screen</title>
+  </head>
+  <body>
+    <2>Login screen</h2>
+      <span th:text=${errorMsg}></span>
+      <form th:action="@{/signup}" method="post" th:object="${signForm}">
+        <div>
+        <label>Login ID</label>
+        <input type="text" th:field="*{signId}">
+        </div>
+        <div>
+          <label>Password</label>
+          <input type="password" th:field="*{password}">
+        </div>
+        <div>
+          <input type="submit" value="login">
+        </div>
+      </form>
+  </body>
+</html>
