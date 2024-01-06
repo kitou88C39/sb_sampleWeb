@@ -11,11 +11,11 @@ public class SignupService {
 
     private final UserInfoRepository repository;
 
-    public Optional<UserInfo> resistUserById(SignupForm form) {
-        var UserInfo = new UserInfo();
+    public UserInfo resistUserById(SignupForm form) {
+        var userInfo = new UserInfo();
         userInfo.setLoginId(form.getLoginId());
         userInfo.setPassword(form.getPassword());
-        return repository.findById(loginId);
+        return repository.save(userInfo);
     }
 
 }
