@@ -14,6 +14,8 @@ import lombok.RequiredArgsConstructor;
 public class SignupService {
 
     private final UserInfoRepository repository;
+    // Dozer Mapper
+    private final Mapper mapper;
 
     public UserInfo resistUserById(SignupForm form) {
         var mapper = new DozerBeanMapper();
