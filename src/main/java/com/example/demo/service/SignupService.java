@@ -18,7 +18,7 @@ public class SignupService {
     private final Mapper mapper;
 
     public UserInfo resistUserById(SignupForm form) {
-        var userInfo = new UserInfo();
+        var userInfo = mapper.map(form, UserInfo.class);
 
         return repository.save(userInfo);
     }
