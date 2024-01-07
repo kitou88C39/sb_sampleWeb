@@ -65,6 +65,11 @@
 			<groupId>org.springframework.security</groupId>
 			<artifactId>spring-security-core</artifactId>
 		</dependency>
+		<dependency>
+			<groupId>net.sf.dozar</groupId>
+			<artifactId>dozar-mapper</artifactId>
+			<version>5.6.0</version>
+		</dependency>
 	</dependencies>
 
 	<build>
