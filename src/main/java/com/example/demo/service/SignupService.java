@@ -27,6 +27,7 @@ public class SignupService {
         var userInfo = mapper.map(form, UserInfo.class);
 
         var encodedPassword = passwordEncoder.encode(form.getPassword());
+        userInfo.setPassword(encodedPassword);
 
         return repository.save(userInfo);
     }
