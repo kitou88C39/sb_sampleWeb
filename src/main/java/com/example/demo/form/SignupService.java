@@ -1,5 +1,6 @@
 package com.example.demo.service;
 
+import dozer.DozerBeanMapper;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entity.UserInfo;
@@ -15,6 +16,7 @@ public class SignupService {
     private final UserInfoRepository repository;
 
     public UserInfo resistUserById(SignupForm form) {
+        var mapper = new DozerBeanMapper();
         var userInfo = new UserInfo();
         userInfo.setLoginId(form.getLoginId());
         userInfo.setPassword(form.getPassword());
