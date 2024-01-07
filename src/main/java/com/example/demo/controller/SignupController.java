@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import com.example.demo.form.LoginForm;
 import com.example.demo.service.LoginService;
+import com.example.demo.service.SignupService;
 
 import lombok.RequiredArgsConstructor;
 
@@ -18,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 public class SignupController {
 
     // User registration screen Service
-    private final LoginService service;
+    private final SignupService service;
     // passwordEncoder
     private final PasswordEncoder passwordEncoder;
 
@@ -41,6 +42,7 @@ public class SignupController {
 
     @PostMapping("/signup")
     public String signup(Model model, SignupForm form) {
+        var userInfo = service.resistUserInfo(form);
 
     }
 }
