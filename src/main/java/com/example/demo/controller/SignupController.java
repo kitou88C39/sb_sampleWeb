@@ -20,10 +20,6 @@ public class SignupController {
 
     // User registration screen Service
     private final SignupService service;
-    // passwordEncoder
-    private final PasswordEncoder passwordEncoder;
-
-    private final MessageSource messageSource;
 
     // Initial display
     // @Param modelモデル
@@ -41,7 +37,7 @@ public class SignupController {
     // return 表示画面
 
     @PostMapping("/signup")
-    public String signup(Model model, SignupForm form) {
+    public void signup(Model model, SignupForm form) {
         var userInfo = service.resistUserInfo(form);
 
     }
