@@ -18,7 +18,7 @@ public class SignupService {
         var userInfo = new UserInfo();
         userInfo.setLoginId(form.getLoginId());
         userInfo.setPassword(form.getPassword());
+
         return repository.save(userInfo);
     }
-
 }
