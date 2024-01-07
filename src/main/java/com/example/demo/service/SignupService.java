@@ -18,10 +18,7 @@ public class SignupService {
     private final Mapper mapper;
 
     public UserInfo resistUserById(SignupForm form) {
-        var mapper = new DozerBeanMapper();
         var userInfo = new UserInfo();
-        userInfo.setLoginId(form.getLoginId());
-        userInfo.setPassword(form.getPassword());
 
         return repository.save(userInfo);
     }
