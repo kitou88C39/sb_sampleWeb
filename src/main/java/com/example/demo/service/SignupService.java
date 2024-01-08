@@ -2,6 +2,8 @@ package com.example.demo.service;
 
 import dozer.DozerBeanMapper;
 
+import java.util.Optional;
+
 import org.apache.catalina.mapper.Mapper;
 import org.springframework.context.MessageSource;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,10 +26,10 @@ public class SignupService {
     // passwordEncoder
     private final PasswordEncoder passwordEncoder;
 
-    public UserInfo resistUserById(SignupForm form) {
+    public Optinal<UserInfo> resistUserById(SignupForm form) {
         var userInfo = repository.findAll(form.getLoginId());
         if (userInfo.isPresent()) {
-            return;
+            return Optional.empty();
         }
 
         var userInfo = mapper.map(form, UserInfo.class);
