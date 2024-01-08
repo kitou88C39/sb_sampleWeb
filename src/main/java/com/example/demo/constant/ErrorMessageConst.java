@@ -5,5 +5,5 @@ public class ErrorMessageConst {
     // Incorrect input on login screen
     public static final String LOGIN_WRONG_INPUT = "login.wrongInput";
     // User registration screen
-    public static final String SIGNUP_EXISTED_INPUT = "signup.extendLoginId";
+    public static final String SIGNUP_EXISTED_LOGIN_ID = "signup.extendLoginId";
 }
