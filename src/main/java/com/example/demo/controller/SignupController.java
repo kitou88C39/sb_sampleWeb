@@ -48,8 +48,8 @@ public class SignupController {
             var errorMsg = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_LOGIN_ID);
             model.addAttribute("message", errorMsg);
         } else {
-            var message = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_LOGIN_ID);
-            model.addAttribute("message", errorMsg);
+            var message = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_SUCCEED);
+            model.addAttribute("message", message);
         }
     }
 }
