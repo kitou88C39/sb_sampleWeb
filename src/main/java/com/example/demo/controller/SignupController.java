@@ -38,6 +38,6 @@ public class SignupController {
 
     @PostMapping("/signup")
     public void signup(Model model, SignupForm form) {
-
+        var userInfoOpt = service.resistUserInfo(form);
     }
 }
