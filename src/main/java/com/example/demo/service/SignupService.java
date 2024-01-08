@@ -25,6 +25,7 @@ public class SignupService {
     private final PasswordEncoder passwordEncoder;
 
     public UserInfo resistUserById(SignupForm form) {
+        var userInfo = repository.findAll(loginId);
         var userInfo = mapper.map(form, UserInfo.class);
 
         var encodedPassword = passwordEncoder.encode(form.getPassword());
