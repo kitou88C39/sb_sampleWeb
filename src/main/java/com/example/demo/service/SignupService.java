@@ -27,8 +27,8 @@ public class SignupService {
     private final PasswordEncoder passwordEncoder;
 
     public Optinal<UserInfo> resistUserById(SignupForm form) {
-        var userInfoExisted = repository.findAll(form.getLoginId());
-        if (userInfoExisted.isPresent()) {
+        var userInfoExistedOpt = repository.findAll(form.getLoginId());
+        if (userInfoExistedOpt.isPresent()) {
             return Optional.empty();
         }
 

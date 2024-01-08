@@ -21,7 +21,7 @@ public class SignupController {
     // User registration screen Service
     private final SignupService service;
 
-    // Initial display
+    // Initial displa
     // @Param modelモデル
     // @Param form入力情報
     // return 表示画面
