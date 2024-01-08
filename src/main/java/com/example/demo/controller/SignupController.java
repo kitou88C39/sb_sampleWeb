@@ -46,7 +46,10 @@ public class SignupController {
         var userInfoOpt = service.resistUserInfo(form);
         if (userInfoOpt.isEmpty()) {
             var errorMsg = AppUtil.getMessage(messageSource, ErrorMessageConst.SIGNUP_EXISTED_LOGIN_ID);
-            model.addAttribute("errorMsq", errorMsg);
+            model.addAttribute("message", errorMsg);
+        } else {
+            var message = AppUtil.getMessage(messageSource, ErrorMessageConst.SIGNUP_EXISTED_LOGIN_ID);
+            model.addAttribute("message", errorMsg);
         }
     }
 }
