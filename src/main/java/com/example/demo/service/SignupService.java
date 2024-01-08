@@ -14,7 +14,8 @@ import com.example.demo.repository.UserInfoRepository;
 import lombok.RequiredArgsConstructor;
 
 //User registration screen
-
+@Service
+@RequiredArgsConstructor
 public class SignupService {
 
     private final UserInfoRepository repository;
