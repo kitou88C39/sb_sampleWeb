@@ -7,7 +7,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.demo.constant.ErrorMessageConst;
+import com.example.demo.constant.MessageConst;
 import com.example.demo.form.LoginForm;
 import com.example.demo.service.LoginService;
 import com.example.demo.service.SignupService;
@@ -45,10 +45,10 @@ public class SignupController {
     public void signup(Model model, SignupForm form) {
         var userInfoOpt = service.resistUserInfo(form);
         if (userInfoOpt.isEmpty()) {
-            var errorMsg = AppUtil.getMessage(messageSource, ErrorMessageConst.SIGNUP_EXISTED_LOGIN_ID);
+            var errorMsg = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_LOGIN_ID);
             model.addAttribute("message", errorMsg);
         } else {
-            var message = AppUtil.getMessage(messageSource, ErrorMessageConst.SIGNUP_EXISTED_LOGIN_ID);
+            var message = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_LOGIN_ID);
             model.addAttribute("message", errorMsg);
         }
     }
