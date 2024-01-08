@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import com.example.demo.form.LoginForm;
 import com.example.demo.service.LoginService;
 import com.example.demo.service.SignupService;
+import com.example.demo.util.AppUtil;
 
 import lombok.RequiredArgsConstructor;
 
@@ -40,7 +41,8 @@ public class SignupController {
     public void signup(Model model, SignupForm form) {
         var userInfoOpt = service.resistUserInfo(form);
         if (userInfoOpt.isEmpty()) {
-
+            var errorMsg = AppUtil.getMessage(messageSource, ErrorMessageConst.LOGIN_WRONG_INPUT);
+            model.addAttribute("errorMsq", errorMsg);
         }
     }
 }
