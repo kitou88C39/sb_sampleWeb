@@ -37,6 +37,6 @@ public class SignupService {
         var encodedPassword = passwordEncoder.encode(form.getPassword());
         userInfo.setPassword(encodedPassword);
 
-        return repository.save(userInfo);
+        return Optional.of(repository.save(userInfo));
     }
 }
