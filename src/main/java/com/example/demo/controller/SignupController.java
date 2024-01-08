@@ -22,6 +22,9 @@ public class SignupController {
     // User registration screen Service
     private final SignupService service;
 
+    // MessageSource
+    private final MessageSource messageSource;
+
     // Initial displa
     // @Param modelモデル
     // @Param form入力情報
