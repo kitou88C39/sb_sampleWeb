@@ -27,13 +27,12 @@ public class SignupService {
     private final PasswordEncoder passwordEncoder;
 
     public Optinal<UserInfo> resistUserById(SignupForm form) {
-        var userInfo = repository.findAll(form.getLoginId());
-        if (userInfo.isPresent()) {
+        var userInfoExisted = repository.findAll(form.getLoginId());
+        if (userInfoExisted.isPresent()) {
             return Optional.empty();
         }
 
         var userInfo = mapper.map(form, UserInfo.class);
-
         var encodedPassword = passwordEncoder.encode(form.getPassword());
         userInfo.setPassword(encodedPassword);
 
