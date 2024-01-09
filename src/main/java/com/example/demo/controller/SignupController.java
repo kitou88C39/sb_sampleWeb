@@ -44,10 +44,9 @@ public class SignupController {
     @PostMapping("/signup")
     public void signup(Model model, SignupForm form) {
         var userInfoOpt = service.resistUserInfo(form);
-        if (userInfoOpt.isEmpty()) {
-            var message = AppUtil.getMessage(messageSource, editMessagekey(userInfoOpt));
-            model.addAttribute("message", errorMsg);
-       
+        var message = AppUtil.getMessage(messageSource, editMessagekey(userInfoOpt));
+        model.addAttribute("message", message);
+
     }
 
     private String editMessagekey(Optinal<UserInfo> userInfoOpt) {
