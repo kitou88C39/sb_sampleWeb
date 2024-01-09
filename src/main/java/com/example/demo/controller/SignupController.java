@@ -44,12 +44,12 @@ public class SignupController {
     @PostMapping("/signup")
     public void signup(Model model, SignupForm form) {
         var userInfoOpt = service.resistUserInfo(form);
-        var message = AppUtil.getMessage(messageSource, editMessagekey(userInfoOpt));
+        var message = AppUtil.getMessage(messageSource, judgeMessagekey(userInfoOpt));
         model.addAttribute("message", message);
 
     }
 
-    private String editMessagekey(Optinal<UserInfo> userInfoOpt) {
+    private String judgeMessagekey(Optinal<UserInfo> userInfoOpt) {
         if (userInfoOpt.isEmpty()) {
             return MessageConst.SIGNUP_EXISTED_LOGIN_ID;
         } else {
