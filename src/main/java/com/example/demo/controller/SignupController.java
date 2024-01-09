@@ -53,11 +53,11 @@ public class SignupController {
         }
     }
 
-}
-
-private String editMessage(Optinal<UserInfo>userInfoOpt){
-    if(userInfoOpt.isEmpty()){
-
-    }else{
+    private String editMessage(Optinal<UserInfo> userInfoOpt) {
+        if (userInfoOpt.isEmpty()) {
+            return MessageConst.SIGNUP_EXISTED_LOGIN_ID;
+        } else {
+            return MessageConst.SIGNUP_EXISTED_SUCCEED;
+        }
     }
 }
