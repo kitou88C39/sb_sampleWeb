@@ -6,7 +6,7 @@
   </head>
   <body>
     <2>Login screen</h2>
-      <span th:text=${errorMsg}></span>
+      <span th:text=${message}></span>
       <form th:action="@{/signup}" method="post" th:object="${signForm}">
         <div>
         <label>LoginID</label>
