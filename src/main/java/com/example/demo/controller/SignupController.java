@@ -45,15 +45,12 @@ public class SignupController {
     public void signup(Model model, SignupForm form) {
         var userInfoOpt = service.resistUserInfo(form);
         if (userInfoOpt.isEmpty()) {
-            var errorMsg = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_LOGIN_ID);
+            var message = AppUtil.getMessage(messageSource, editMessagekey(userInfoOpt));
             model.addAttribute("message", errorMsg);
-        } else {
-            var message = AppUtil.getMessage(messageSource, MessageConst.SIGNUP_EXISTED_SUCCEED);
-            model.addAttribute("message", message);
-        }
+       
     }
 
-    private String editMessage(Optinal<UserInfo> userInfoOpt) {
+    private String editMessagekey(Optinal<UserInfo> userInfoOpt) {
         if (userInfoOpt.isEmpty()) {
             return MessageConst.SIGNUP_EXISTED_LOGIN_ID;
         } else {
