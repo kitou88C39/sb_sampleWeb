@@ -53,7 +53,7 @@ public class SignupController {
         if (userInfoOpt.isEmpty()) {
             return MessageConst.SIGNUP_EXISTED_LOGIN_ID;
         } else {
-            return MessageConst.SIGNUP_EXISTED_SUCCEED;
+            return MessageConst.SIGNUP_RESIST_SUCCEED;
         }
     }
 }
